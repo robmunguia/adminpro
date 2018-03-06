@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { setInterval, clearInterval } from 'timers';
+import { clearInterval } from 'timers';
 
 @Component({
   selector: 'app-promesas',
@@ -9,7 +9,6 @@ import { setInterval, clearInterval } from 'timers';
 export class PromesasComponent implements OnInit {
 
   constructor() {
-
 
     this.contarTress().then(
       dato => console.log('Termino', dato)
@@ -27,7 +26,7 @@ export class PromesasComponent implements OnInit {
     return new Promise( (resolve, reject) => {
       let contador = 0;
 
-      let intervalo = setInterval( () => {
+      const intervalo = setInterval( () => {
 
         contador += 1;
         console.log( contador );
